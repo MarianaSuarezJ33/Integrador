@@ -1,17 +1,18 @@
-// UsuarioController.java
 package com.co.glamping.controller;
 
 import com.co.glamping.model.Usuario;
 import com.co.glamping.service.UsuarioService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-    @Autowired
-    private UsuarioService usuarioService;
+
+    private final UsuarioService usuarioService;
 
     @PostMapping
     public Usuario save(@RequestBody Usuario usuario) {
