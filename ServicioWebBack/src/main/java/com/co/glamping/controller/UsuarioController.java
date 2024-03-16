@@ -29,5 +29,4 @@ public class UsuarioController {
         usuarioService.deleteById(id);
     }
 
-    // Otros métodos para manejar operaciones CRUD de Usuario
 }

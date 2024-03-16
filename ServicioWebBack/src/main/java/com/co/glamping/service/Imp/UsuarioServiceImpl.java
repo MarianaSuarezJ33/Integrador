@@ -6,6 +6,9 @@ import com.co.glamping.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
@@ -27,5 +30,36 @@ public class UsuarioServiceImpl implements UsuarioService {
         usuarioRepository.deleteById(id);
     }
 
-    // Implementar otros métodos según sea necesario
+    @Override
+    public List<Usuario> findAll() {
+        return usuarioRepository.findAll();
+    }
+
+    @Override
+    public long count() {
+        return usuarioRepository.count();
+    }
+
+    @Override
+    public boolean existsById(Long id) {
+        return usuarioRepository.existsById(id);
+    }
+
+    @Override
+    public void deleteAll() {
+        usuarioRepository.deleteAll();
+    }
+
+
+    public void deleteAllInBatch(Iterable<Usuario> usuarios) {
+        usuarioRepository.deleteAllInBatch(usuarios);
+    }
+
+        public Usuario findByUsuarioInstitucional(String usuarioInstitucional) {
+            return usuarioRepository.findByUsuarioInstitucional(usuarioInstitucional);
+        }
+
+    public Optional<Usuario> findByCorreoElectronico(String correoElectronico) {
+        return usuarioRepository.findByCorreoElectronico(correoElectronico);
+    }
 }

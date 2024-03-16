@@ -1,7 +1,8 @@
-// UsuarioService.java
 package com.co.glamping.service;
 
 import com.co.glamping.model.Usuario;
+
+import java.util.List;
 
 public interface UsuarioService {
     Usuario save(Usuario usuario);
@@ -9,5 +10,12 @@ public interface UsuarioService {
     Usuario findById(Long id);
 
     void deleteById(Long id);
-    // Otros métodos para el CRUD de Usuario
+
+    List<Usuario> findAll();
+
+    long count();
+
+    boolean existsById(Long id);
+
+    void deleteAll();
 }
