@@ -1,7 +1,8 @@
-package com.co.glamping.service;
+package com.co.glamping.service.Imp;
 
 import com.co.glamping.model.Grupo;
 import com.co.glamping.persistence.GrupoRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,14 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
+
 public class GrupoService {
 
     private final GrupoRepository grupoRepository;
-
-    @Autowired
-    public GrupoService(GrupoRepository grupoRepository) {
-        this.grupoRepository = grupoRepository;
-    }
 
     public void save(Grupo grupo) {
         grupoRepository.save(grupo);

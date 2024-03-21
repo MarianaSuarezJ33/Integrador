@@ -1,4 +1,5 @@
-package com.co.glamping.service;
+package com.co.glamping.service.Imp;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.co.glamping.model.Usuario;
@@ -10,10 +11,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 @Service
+@RequiredArgsConstructor
 public class ArchivoCSVService {
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+
+    private final  UsuarioRepository usuarioRepository;
 
     public void cargarArchivoCSV(MultipartFile archivoCSV) throws IOException {
         if (archivoCSV == null || archivoCSV.isEmpty()) {

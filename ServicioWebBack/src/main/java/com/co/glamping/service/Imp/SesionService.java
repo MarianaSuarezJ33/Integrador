@@ -1,7 +1,8 @@
-package com.co.glamping.service;
+package com.co.glamping.service.Imp;
 
 import com.co.glamping.model.Sesion;
 import com.co.glamping.persistence.SesionRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,14 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
+
 public class SesionService {
 
     private final SesionRepository sesionRepository;
-
-    @Autowired
-    public SesionService(SesionRepository sesionRepository) {
-        this.sesionRepository = sesionRepository;
-    }
 
     public Sesion guardarSesion(Sesion sesion) {
         return sesionRepository.save(sesion);

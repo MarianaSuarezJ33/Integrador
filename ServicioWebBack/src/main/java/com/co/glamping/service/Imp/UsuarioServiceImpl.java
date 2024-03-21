@@ -3,6 +3,7 @@ package com.co.glamping.service.Imp;
 import com.co.glamping.model.Usuario;
 import com.co.glamping.persistence.UsuarioRepository;
 import com.co.glamping.service.UsuarioService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +11,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class UsuarioServiceImpl implements UsuarioService {
 
-    @Autowired
+
     private UsuarioRepository usuarioRepository;
 
     @Override

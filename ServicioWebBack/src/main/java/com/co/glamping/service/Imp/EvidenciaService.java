@@ -1,4 +1,5 @@
-package com.co.glamping.service;
+package com.co.glamping.service.Imp;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -9,9 +10,9 @@ import com.co.glamping.model.Evidencia;
 import com.co.glamping.persistence.EvidenciaRepository;
 
 @Service
+@RequiredArgsConstructor
 public class EvidenciaService {
 
-    @Autowired
     private EvidenciaRepository evidenciaRepository;
 
     public List<Evidencia> obtenerTodasLasEvidencias() {
